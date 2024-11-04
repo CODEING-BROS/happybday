@@ -189,11 +189,13 @@
 
         var textAnimate = eval(Jscex.compile("async", function () {
 		    var together = new Date();
-		    together.setFullYear(2023, 07, 04); 			
-		    together.setHours(24);						
-		    together.setMinutes(60);					
-		    together.setSeconds(360);					
-		    together.setMilliseconds(60000);				
+		    var together = new Date();
+together.setFullYear(2023, 3, 7);  // Set month to 3 (April) and day to 7
+together.setHours(24);              // Adjust time as needed
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(2);
+		
 
 		    $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
