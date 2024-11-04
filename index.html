@@ -187,9 +187,10 @@
             }
         }));
 
-        var together = new Date(2023, 3, 7);  // Set initial date to April 7, 2023
-together.setDate(together.getDate() + 505);  // Add 505 days
-	    
+        var textAnimate = eval(Jscex.compile("async", function () {
+            var together = new Date(2023, 3, 7);  // Set initial date to April 7, 2023
+            together.setDate(together.getDate() + 505);  // Add 505 days
+		
 		
 
 		    $("#code").show().typewriter();
