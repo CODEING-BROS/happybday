@@ -188,30 +188,23 @@
         }));
 
         var textAnimate = eval(Jscex.compile("async", function () {
-            var together = new Date(2023, 4 am, 7);  
-            together.setDate(together.getDate() + 505);  
-		
-		
+                var together = new Date();
+                together.setFullYear(2023, 3, 7); // Updated date
+                together.setHours(24);
+                together.setMinutes(0);
+                together.setSeconds(0);
+                together.setMilliseconds(2);
+                $("#code").show().typewriter();
+                $("#clock-box").fadeIn(500);
+                while (true) {
+                    timeElapse(together);
+                    $await(Jscex.Async.sleep(1000));
+                }
+            }));
 
-		    $("#code").show().typewriter();
-            $("#clock-box").fadeIn(500);
-            while (true) {
-                timeElapse(together);
-                $await(Jscex.Async.sleep(1000));
-            }
-        }));
-
-        var runAsync = eval(Jscex.compile("async", function () {
-            $await(seedAnimate());
-            $await(growAnimate());
-            $await(flowAnimate());
-            $await(moveAnimate());
-
-            textAnimate().start();
-
-            $await(jumpAnimate());
-        }));
-
-        runAsync().start();
-    })();
-    </script></body></html>
+            var runAsync = eval(Jscex.compile("async", function () {
+                $await(seedAnimate());
+                $await(growAnimate());
+                $await(flowAnimate());
+                $await(moveAnimate());
+                text
