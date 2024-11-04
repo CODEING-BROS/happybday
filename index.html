@@ -1,60 +1,82 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>HBD love </title>	    
-        <link type="text/css" rel="stylesheet" href="./file/default.css">
-		<script type="text/javascript" src="./file/jquery.min.js"></script>
-		<script type="text/javascript" src="./file/jscex.min.js"></script>
-		<script type="text/javascript" src="./file/jscex-parser.js"></script>
-		<script type="text/javascript" src="./file/jscex-jit.js"></script>
-		<script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
-		<script type="text/javascript" src="./file/jscex-async.min.js"></script>
-		<script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
-		<script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
-		<script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
-        <script>
-            function playAudio() {
-                var audio = document.getElementById("myAudio");
-                audio.play();
-            }
-        </script>
-	    <style type="text/css">
-        </style>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HBD Love</title>
+    <link type="text/css" rel="stylesheet" href="./file/default.css">
+    <script type="text/javascript" src="./file/jquery.min.js"></script>
+    <script type="text/javascript" src="./file/jscex.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-parser.js"></script>
+    <script type="text/javascript" src="./file/jscex-jit.js"></script>
+    <script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-async.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+    </script>
+    <style type="text/css">
+        #main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #wrap {
+            width: 100%;
+            max-width: 480px;
+            margin: auto;
+        }
+        #text {
+            font-size: 18px;
+            text-align: center;
+        }
+        #canvas {
+            width: 100%;
+            height: auto;
+            max-width: 480px;
+        }
+        .say {
+            font-size: 1.2em;
+        }
+        #clock-box {
+            font-size: 1em;
+            margin-top: 20px;
+        }
+    </style>
 </head>
-    <body>
-        <div id="main">
-            <div id="error">，<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>(<a href="http://firefox.com.cn/download/">Firefox</a>)</div>
-            <audio autoplay="autoplay" height="100" width="100" id = "myAudio">
-                    <source src="aud.mp3" type="audio/mp3" />
-                    <embed height="100" width="100" src="aud.mp3" />
-            </audio>
-            <div id="wrap">
-                <div id="text">
-                    <div id="code">
-                      <span class="say">My beautiful wife 💞</span><br>
+<body>
+    <div id="main">
+        <div id="error">Please open in <a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a> or <a href="http://firefox.com.cn/download/">Firefox</a>.</div>
+        <audio autoplay="autoplay" id="myAudio">
+            <source src="aud.mp3" type="audio/mp3" />
+            <embed height="100" width="100" src="aud.mp3" />
+        </audio>
+        <div id="wrap">
+            <div id="text">
+                <div id="code">
+                    <span class="say">My beautiful wife 💞</span><br>
                     <span class="say">Happy Birthday 🎈</span><br>
                     <span class="say">May Allah bless you 🍀</span><br>
                     <span class="say">And give u many happiness 💕</span><br>
                     <span class="say">I loved you ❤️</span><br>
                     <span class="say">And I will always love u 🥺 ❤️</span><br>
-		     <span class="say"> hope u have a great day today ❤️😘</span><br>
-                      <span class="say"><span class="space"></span></span> </font>
-                          <br />
-                          <br />
-                      </p>
-                    </div>
-                  </div>
-
-                  <div id = "message-box"></div>
-                <div id="clock-box">
-                    <span class="STYLE1"></span><font color="#33CC00"></font>
-<span class="STYLE1"></span>
-                  <div id="clock"></div>
-              </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
+                    <span class="say">Hope u have a great day today ❤️😘</span><br>
+                </div>
             </div>
-            
+            <div id="message-box"></div>
+            <div id="clock-box">
+                <span class="STYLE1"></span><font color="#33CC00"></font>
+                <span class="STYLE1"></span>
+                <div id="clock"></div>
+            </div>
+            <canvas id="canvas" width="480" height="680"></canvas>
         </div>
-    
+    </div>
     <script>
     </script>
 
@@ -78,8 +100,7 @@
             },
             branch: [
                 [535, 680, 570, 250, 500, 200, 30, 100, [
-                    [540, 500, 455, 417, 340, 400, 13, 100, [
-                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    [540, 500, 455, 417, 340, 400,                [450, 435, 434, 430, 394, 395, 2, 40]
                     ]],
                     [550, 445, 600, 356, 680, 345, 12, 100, [
                         [578, 400, 648, 409, 661, 426, 3, 80]
