@@ -187,16 +187,7 @@
             }
         }));
 
-        var textAnimate = eval(Jscex.compile("async", function () {
-    var together = new Date();
-    together.setFullYear(2024, 6, 12);
-    $("#code").show().typewriter();
-    $("#clock-box").fadeIn(500);
-    while (true) {
-        timeElapse(together);
-        $await(Jscex.Async.sleep(1000));
-    }
-}));
+       
 	    
 
         var runAsync = eval(Jscex.compile("async", function () {
