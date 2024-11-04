@@ -1,75 +1,62 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>HBD love </title>	    
-        <link type="text/css" rel="stylesheet" href="./file/default.css">
-		<script type="text/javascript" src="./file/jquery.min.js"></script>
-		<script type="text/javascript" src="./file/jscex.min.js"></script>
-		<script type="text/javascript" src="./file/jscex-parser.js"></script>
-		<script type="text/javascript" src="./file/jscex-jit.js"></script>
-		<script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
-		<script type="text/javascript" src="./file/jscex-async.min.js"></script>
-		<script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
-		<script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
-		<script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
-        <script>
-            function playAudio() {
-                var audio = document.getElementById("myAudio");
-                audio.play();
-            }
-        </script>
-	    <style type="text/css">
-        </style>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>HBD love</title>	    
+    <link type="text/css" rel="stylesheet" href="./file/default.css">
+    <script type="text/javascript" src="./file/jquery.min.js"></script>
+    <script type="text/javascript" src="./file/jscex.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-parser.js"></script>
+    <script type="text/javascript" src="./file/jscex-jit.js"></script>
+    <script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-async.min.js"></script>
+    <script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
+    <script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("myAudio");
+            audio.play();
+        }
+    </script>
 </head>
-    <body>
-        <div id="main">
-            <div id="error">，<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>(<a href="http://firefox.com.cn/download/">Firefox</a>)</div>
-            <audio autoplay="autoplay" height="100" width="100" id = "myAudio">
-                    <source src="aud.mp3" type="audio/mp3" />
-                    <embed height="100" width="100" src="aud.mp3" />
-            </audio>
-            <div id="wrap">
-                <div id="text">
-                    <div id="code">
-                      <span class="say">My beautiful wife 💞</span><br>
+<body>
+    <div id="main">
+        <div id="error"><a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a> (<a href="http://firefox.com.cn/download/">Firefox</a>)</div>
+        <audio autoplay="autoplay" height="100" width="100" id="myAudio">
+            <source src="aud.mp3" type="audio/mp3" />
+            <embed height="100" width="100" src="aud.mp3" />
+        </audio>
+        <div id="wrap">
+            <div id="text">
+                <div id="code">
+                    <span class="say">My beautiful wife 💞</span><br>
                     <span class="say">Happy Birthday 🎈</span><br>
                     <span class="say">May Allah bless you 🍀</span><br>
                     <span class="say">And give u many happiness 💕</span><br>
                     <span class="say">I loved you ❤️</span><br>
                     <span class="say">And I will always love u 🥺 ❤️</span><br>
-		     <span class="say"> hope u have a great day today ❤️😘</span><br>
-                      <span class="say"><span class="space"></span></span> </font>
-                          <br />
-                          <br />
-                      </p>
-                    </div>
-                  </div>
-
-                  <div id = "message-box"></div>
-                <div id="clock-box">
-                    <span class="STYLE1"></span><font color="#33CC00"></font>
-<span class="STYLE1"></span>
-                  <div id="clock"></div>
-              </div>
-                <canvas id="canvas" width="1100" height="680"></canvas>
+                    <span class="say">Hope u have a great day today ❤️😘</span><br>
+                </div>
             </div>
-            
+            <canvas id="canvas" width="1100" height="680"></canvas>
         </div>
-    
-    <script>
-    </script>
+    </div>
 
     <script>
-    (function(){
+    (function() {
         var canvas = $('#canvas');
 		
         if (!canvas[0].getContext) {
             $("#error").show();
-            return false;        }
+            return false;
+        }
 
         var width = canvas.width();
         var height = canvas.height();        
         canvas.attr("width", width);
         canvas.attr("height", height);
+
         var opts = {
             seed: {
                 x: width / 2 - 20,
@@ -113,7 +100,6 @@
 
         canvas.click(function(e) {
             playAudio();
-            console.log("Helloworld!");
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
@@ -123,14 +109,12 @@
                 canvas.unbind("mousemove");
                 canvas.removeClass('hand');
             }
-        }).mousemove(function(e){
+        }).mousemove(function(e) {
             var offset = canvas.offset(), x, y;
             x = e.pageX - offset.left;
             y = e.pageY - offset.top;
             canvas.toggleClass('hand', seed.hover(x, y));
         });
-        
-        
 
         var seedAnimate = eval(Jscex.compile("async", function () {
             seed.draw();
@@ -150,14 +134,14 @@
 
         var growAnimate = eval(Jscex.compile("async", function () {
             do {
-    	        tree.grow();
+                tree.grow();
                 $await(Jscex.Async.sleep(10));
             } while (tree.canGrow());
         }));
 
         var flowAnimate = eval(Jscex.compile("async", function () {
             do {
-    	        tree.flower(2);
+                tree.flower(2);
                 $await(Jscex.Async.sleep(10));
             } while (tree.canFlower());
         }));
@@ -177,39 +161,21 @@
             canvas.css("background", "none");
         }));
 
-        var jumpAnimate = eval(Jscex.compile("async", function () {
-            var ctx = tree.ctx;
-            while (true) {
-                tree.ctx.clearRect(0, 0, width, height);
-                tree.jump();
-                foot.draw();
-                $await(Jscex.Async.sleep(25));
-            }
+        var textAnimate = eval(Jscex.compile("async", function () {
+            $("#code").show().typewriter();
         }));
-
-       var textAnimate = eval(Jscex.compile("async", function () {
-    var together = new Date();
-    together.setFullYear(22, 6, 12);
-    $("#code").show().typewriter();
-    $("#clock-box").fadeIn(500);
-    while (true) {
-        timeElapse(together);
-        $await(Jscex.Async.sleep(1000));
-    }
-}));
 	    
-
         var runAsync = eval(Jscex.compile("async", function () {
             $await(seedAnimate());
             $await(growAnimate());
             $await(flowAnimate());
             $await(moveAnimate());
-
             textAnimate().start();
-
-            $await(jumpAnimate());
         }));
 
         runAsync().start();
     })();
-    </script></body></html>
+    </script>
+</body>
+</html>
+
